@@ -148,18 +148,11 @@ class MultTime2dMixer(nn.Module):
         self.n = n
         self.channel = channel
         self.time_step = time_step
-        # 输出维度扩展用全连接层
-        # self.output_expand = nn.Sequential(
-        #     nn.Linear(int(2.5*time_step), time_step),
-        # )
 
     def forward(self, inputs, y):
         y = self.scale_mix_layer(y)
         x = self.mix_layer(inputs)
         mixed = torch.cat([inputs, x, y], dim=1)  # [B, T + T + scale_dim, C]
-        # mixed = mixed.permute(0, 2, 1)
-        # mixed = self.output_expand(mixed)           # [B, T_total, C*n]
-        # out = mixed.permute(0, 2, 1)  # reshape to [B, n*T, C]
         return mixed
 
 

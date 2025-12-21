@@ -21,7 +21,7 @@ class CMBlockChannelAttention(nn.Module):
     def forward(self, x):
         batch_size, channels, d_model = x.shape
         device = x.device
-        x = x.reshape(batch_size, d_model, channels, -1).to(device)  # 这里放前面会报错
+        x = x.reshape(batch_size, d_model, channels, -1).to(device)
         out = torch.zeros_like(x).to(device)
         if self.avg_flag:
             tmp = self.avg_pool(x.to(device)).to(device)

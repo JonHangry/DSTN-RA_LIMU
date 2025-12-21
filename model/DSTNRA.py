@@ -24,7 +24,6 @@ class Model(nn.Module):
         self.projector = nn.Linear(configs.d_model, configs.pred_len, bias=True)
         self.var = Variance(1, self.dropout, configs.pred_len-1)
 
-        # func of STL
         scale_dim = 8
         self.mixer = MultTime2dMixer(time_step=configs.seq_len, channel=configs.c_out, scale_dim=configs.seq_len // 2, n=2)
         self.conv = nn.Conv1d(in_channels=configs.c_out, out_channels=configs.c_out, kernel_size=2, stride=2)
@@ -48,7 +47,6 @@ class Model(nn.Module):
     def forecast(self, x_enc, x_mark_enc, x_dec, x_mark_dec):
 
         if self.use_norm:
-            # Normalization from Non-stationary Transformer
             means = x_enc.mean(1, keepdim=True).detach()
             x_enc = x_enc - means
             stdev = torch.sqrt(torch.var(x_enc, dim=1, keepdim=True, unbiased=False) + 1e-5)
@@ -91,7 +89,6 @@ class Model(nn.Module):
             dec_out = dec_out * (stdev[:, 0, :].unsqueeze(1).repeat(1, self.pred_len, 1))
             dec_out = dec_out + (means[:, 0, :].unsqueeze(1).repeat(1, self.pred_len, 1))
 
-        # return dec_out, var_out
         return dec_out
 
     def forward(self, x_enc, x_mark_enc, x_dec, x_mark_dec, mask=None):

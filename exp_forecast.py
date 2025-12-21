@@ -147,7 +147,6 @@ class ExpForecast(ExpBasic):
         early_stopping = EarlyStopping(patience=self.args.patience, verbose=True)
 
         model_optim = self._select_optimizer()
-        # 余弦退火
         scheduler = optim.lr_scheduler.CosineAnnealingLR(model_optim, T_max=100)
 
         criterion_len = len(self.args.criterion)
@@ -195,11 +194,10 @@ class ExpForecast(ExpBasic):
                         for num_loss in range(criterion_len):
                             # print(num_loss)
                             criterion = self._select_criterion(num_loss)
-                            loss = criterion(outputs, batch_y)  # 这里计算损失
+                            loss = criterion(outputs, batch_y)
                             if self.args.criterion[num_loss] in loss_dict:
                                 loss_dict[self.args.criterion[num_loss]].append(loss.item())
-                        # loss = criterion(outputs, batch_y)  # 这里计算损失
-                        # train_loss.append(loss.item())  # 加入训练损失的列表
+
                 else:
                     if self.args.output_attention:
                         outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)[0]

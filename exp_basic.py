@@ -1,4 +1,3 @@
-# 这里定义一个运行的类
 import os
 import torch
 import warnings
@@ -23,10 +22,8 @@ class ExpBasic(object):
             os.environ["CUDA_VISIBLE_DEVICES"] = str(self.args.gpu) if not self.args.use_multi_gpu else self.args.devices
 
             device = torch.device('cuda:{}'.format(self.args.gpu))
-            # 显示使用的GPU
             print('Use GPU: cuda:{}'.format(self.args.gpu))
         else:
-            # 采用CPU
             device = torch.device('cpu')
             print('Use CPU')
         return device

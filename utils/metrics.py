@@ -39,5 +39,3 @@ def metric(pred, true):
     mspe = MSPE(pred, true)
 
     return mae, mse, rmse, mape, mspe
-
-# TODO 这里还要补充其他指标 计算
