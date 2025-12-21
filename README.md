@@ -52,7 +52,7 @@ Please ensure you have installed the necessary library dependencies before runni
 
 You can start training the model by running the `train.py`. You can modify them via command-line arguments.
 
-`python train.py`
+Run `python train.py`
 
 ## Key Arguments
 
@@ -68,11 +68,7 @@ Dataset Configuration: When switching datasets, ensure you check the number of f
 
 `--c_out`: Output size
 
-## Cost
-
 You can measure the runtime and memory cost during the experiment.
-
-For example, in the experiment of exchange_rate_96_96, the training time per epoch is about 69 seconds and max GPU memory allocated is about 29.9 MB.
 
 # Future Plans
 
