@@ -229,12 +229,6 @@ class ExpForecast(ExpBasic):
                     loss.backward()
                     model_optim.step()
 
-            if torch.cuda.is_available():
-                torch.cuda.synchronize()
-                max_mem = torch.cuda.max_memory_allocated() / 1024 ** 2  # MB
-                print(f"Max GPU Memory Allocated: {max_mem:.2f} MB")
-                torch.cuda.reset_peak_memory_stats()
-
             print("Epoch: {} cost time: {}".format(epoch + 1, time.time() - epoch_time))
             train_loss = np.average(train_loss)
             vali_loss = self.vali(vali_data, vali_loader)
