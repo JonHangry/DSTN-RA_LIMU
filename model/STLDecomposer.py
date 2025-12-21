@@ -11,10 +11,10 @@ def run_stl(
     device='cuda'
 ):
 
-    data = data.permute(1, 0).unsqueeze(-1)  # [F, T, 1]
+    data = data.permute(1, 0).unsqueeze(-1)
 
     stl = FastSTL(period=period, trend_kernel=trend_kernel, device=device)
-    seasonal, trend = stl(data)  # shape: [F, T, 1]
+    seasonal, trend = stl(data)
 
     seasonal = seasonal.squeeze(-1).permute(1, 0)
     trend = trend.squeeze(-1).permute(1, 0)

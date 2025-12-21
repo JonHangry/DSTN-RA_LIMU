@@ -391,7 +391,6 @@ class ExpForecast(ExpBasic):
 
         avg_vali_loss = {k: np.mean(v) for k, v in loss_dict.items()}
         self.model.train()
-        # return total_loss
         return avg_vali_loss
 
     def get_input(self, setting):
@@ -421,10 +420,9 @@ class ExpForecast(ExpBasic):
                 batch_x_mark = batch_x_mark.float().to(self.device)
                 batch_y_mark = batch_y_mark.float().to(self.device)
 
-                # decoder input
                 dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
                 dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
-                # encoder - decoder
+
                 if self.args.use_amp:
                     with torch.amp.autocast("cuda"):
                         if self.args.output_attention:
@@ -445,7 +443,6 @@ class ExpForecast(ExpBasic):
         preds = np.array(preds)
         preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1])
 
-        # result save
         folder_path = './results/' + setting + '/'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)

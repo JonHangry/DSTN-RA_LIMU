@@ -7,6 +7,7 @@ from layers.Attention import MultiheadAttention
 class CMBlockChannelAttention(nn.Module):
     def __init__(self, n_vars=7, reduction=2, avg_flag=True, max_flag=True):
         super(CMBlockChannelAttention, self).__init__()
+        # parameters
         self.avg_flag = avg_flag
         self.max_flag = max_flag
         self.avg_pool = nn.AdaptiveAvgPool2d(1)

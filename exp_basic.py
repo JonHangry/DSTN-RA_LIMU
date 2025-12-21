@@ -6,7 +6,7 @@ from model import DSTNRA
 class ExpBasic(object):
     def __init__(self, args):
         self.args = args
-
+        # write your models
         self.model_dict = {
             "DSTNRA": DSTNRA,
         }

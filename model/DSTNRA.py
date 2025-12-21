@@ -59,20 +59,14 @@ class Model(nn.Module):
         trend = trend.reshape(B, L, N)
         x_enc = season
 
-        x = trend.permute(0, 2, 1)  # x:[1026,5,16]
-        x = self.conv(x)  # x:[1026,5,8]
-        x = x.permute(0, 2, 1)  # x:[1026,8,5]
-        y = self.mixer(trend, x)  # y:[1026,40,5]
+        x = trend.permute(0, 2, 1)
+        x = self.conv(x)
+        x = x.permute(0, 2, 1)
+        y = self.mixer(trend, x)
         y = y.permute(0, 2, 1)
         y = self.output_expand(y)
         y = y.permute(0, 2, 1)
 
-        # B: batch_size;    E: d_model; 
-        # L: seq_len;       S: pred_len;
-        # N: number of variate (tokens), can also includes covariates
-
-        # Embedding
-        # B L N -> B N E
         enc_out = self.enc_embedding(x_enc, x_mark_enc)
 
 
