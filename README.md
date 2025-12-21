@@ -68,6 +68,11 @@ Dataset Configuration: When switching datasets, ensure you check the number of f
 
 `--c_out`: Output size
 
+## Key Arguments
+
+You can measure the runtime and memory cost during the experiment.
+
+For example, in the experiment of exchange_rate_96_96, the training time per epoch is about 70 seconds and max GPU memory allocated is about 29.9 MB.
 
 # Future Plans
 
