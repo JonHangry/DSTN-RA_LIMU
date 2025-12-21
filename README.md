@@ -20,13 +20,13 @@ Please unzip the `raw_data.rar` file into the root directory under the folder `.
 
 ### Example directory structure after unzipping
 
-`./datasets/
+`./datasets/`
 
-  ├── ETT/
+` ├── ETT/`
   
-  ├── exchange_rate/
+` ├── exchange_rate/`
   
-  └── weather/`
+` └── weather/`
 
 Note: More datasets will be released in the future.
 
@@ -48,7 +48,7 @@ Please ensure you have installed the necessary library dependencies before runni
 
 ## Training
 
-You can start training the model by running the `train.py`. The script comes with default hyperparameters, but you can modify them via command-line arguments.
+You can start training the model by running the `train.py`. You can modify them via command-line arguments.
 
 Run `python train.py`
 
@@ -66,9 +66,6 @@ Dataset Configuration: When switching datasets, ensure you check the number of f
 
 `--c_out`: Output size
 
-# Reviewer Response
-
-A detailed explanation and response to the reviewers' comments can be found in the `./Explanation` directory.
 
 # Future Plans
 
