@@ -8,11 +8,11 @@ This is the official code and supplementary materials for LIMU's work on Time Se
 
 We currently support the following datasets:
 
-ETT (Electricity Transformer Temperature)
+1. ETT (Electricity Transformer Temperature)
 
-Exchange (Exchange Rate)
+2. Exchange (Exchange Rate)
 
-Weather
+3. Weather
 
 In the future, more datasets will be included.
 
