@@ -1,6 +1,7 @@
 import torch
 import torch.nn.functional as F
 
+# FastSTL
 class FastSTL(torch.nn.Module):
     def __init__(self, period=24, trend_kernel=25, device='cuda'):
         super(FastSTL, self).__init__()

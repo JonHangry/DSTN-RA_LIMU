@@ -16,6 +16,8 @@ import random
 from scipy.special import logsumexp
 from scipy.stats import norm
 
+# Please install these libs
+
 warnings.filterwarnings('ignore')
 
 class ExpForecast(ExpBasic):

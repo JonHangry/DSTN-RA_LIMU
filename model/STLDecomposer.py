@@ -14,7 +14,7 @@ def run_stl(
     data = data.permute(1, 0).unsqueeze(-1)
 
     stl = FastSTL(period=period, trend_kernel=trend_kernel, device=device)
-    seasonal, trend = stl(data)
+    seasonal, trend = stl(data)     # Decompose
 
     seasonal = seasonal.squeeze(-1).permute(1, 0)
     trend = trend.squeeze(-1).permute(1, 0)

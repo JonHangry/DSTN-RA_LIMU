@@ -123,9 +123,7 @@ class DataEmbedding(nn.Module):
         return self.dropout(x)
 
 class moving_avg(nn.Module):
-    """
-    Moving average block to highlight the trend of time series
-    """
+
     def __init__(self, kernel_size, stride):
         super(moving_avg, self).__init__()
         self.kernel_size = kernel_size
@@ -142,9 +140,7 @@ class moving_avg(nn.Module):
 
 
 class series_decomp(nn.Module):
-    """
-    Series decomposition block
-    """
+
     def __init__(self, kernel_size):
         super(series_decomp, self).__init__()
         self.moving_avg = moving_avg(kernel_size, stride=1)
@@ -179,7 +175,6 @@ class DataEmbedding_inverted(nn.Module):
     def forward(self, x, x_mark):
         x = x.permute(0, 2, 1)
 
-        # x: [Batch Variate Time]
         if x_mark is None:
 
             x = self.value_embedding(x)
