@@ -1,4 +1,4 @@
-# DSTN-RA：: A Time Series Forecasting Model
+# DSTN-RA: A Time Series Forecasting Model
 
 This repository contains the implementation of DSTN-RA, a novel time series forecasting model.
 
