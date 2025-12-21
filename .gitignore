@@ -1,0 +1,30 @@
+ # Python
+__pycache__/
+*.pyc
+*.log
+
+# Environment
+.env
+.venv
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyTorch
+*.pt
+*.pth
+
+# IDE
+.idea/
+.vscode/
+
+datasets/
+*.csv
+*.pt
+*.pth
+__pycache__/
+.ipynb_checkpoints/
+.idea/
+.vscode/
+
