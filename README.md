@@ -1,6 +1,6 @@
 # DSTN-RA: A Time Series Forecasting Model
 
-This repository contains the implementation of DSTN-RA, a novel time series forecasting model.
+This repository contains the implementation of DSTN-RA(Decomposed Seasonal-Trend Network with Rotary Attention), a novel time series forecasting model.
 
 This is the official code and supplementary materials for LIMU's work on Time Series Forecasting.
 
