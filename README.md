@@ -14,6 +14,8 @@ Exchange (Exchange Rate)
 
 Weather
 
+In the future, more datasets will be included.
+
 ## Setup Instructions:
 
 Please unzip the `raw_data.rar` file into the root directory under the folder `./datasets`.
