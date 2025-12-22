@@ -68,8 +68,6 @@ Dataset Configuration: When switching datasets, ensure you check the number of f
 
 `--c_out`: Output size
 
-You can measure the runtime and memory cost during the experiment.
-
 # Future Plans
 
 We are committed to improving this project. Following the acceptance of the paper, we plan to:
