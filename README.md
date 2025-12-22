@@ -52,7 +52,7 @@ Please ensure you have installed the necessary library dependencies before runni
 
 You can start training the model by running the `train.py`. You can modify them via command-line arguments.
 
-Run `python train.py`
+You can run it by `python train.py`
 
 ## Key Arguments
 
