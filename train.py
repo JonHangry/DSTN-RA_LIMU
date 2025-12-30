@@ -10,9 +10,7 @@ warnings.filterwarnings("ignore")
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 def parse_args():
-
     parser = argparse.ArgumentParser(description="Time Series Platform Args")
-
     parser.add_argument('--model', type=str, default='DSTNRA', help='*select the model you want to train')
     parser.add_argument('--optimizer', type=str, default='Adam', help='*select the optimizer you want to adopt')
     parser.add_argument('--learning_rate', type=float, default=0.0001, help='*select the initial learning rate')
@@ -31,7 +29,6 @@ def parse_args():
     parser.add_argument('--root_path', type=str, default='./', help='*determine the root directory of dataset')
     parser.add_argument('--data', type=str, default='custom', help='*specify the type of data to use (custom or pred)')
     parser.add_argument('--data_path', type=str, default='datasets/exchange_rate/exchange_rate.csv')
-
     parser.add_argument('--features', type=str, default='M', choices=['M', 'S'], help='*determine the type of features (M for multivariate, S for single)')
     parser.add_argument('--target', type=str, default='OT', help='determine the target column to predict')
     parser.add_argument('--num_workers', type=int, default=10, help='*determine the number of workers')
@@ -39,7 +36,6 @@ def parse_args():
     parser.add_argument('--output_attention', action="store_true", help='*determine whether to output attention')
     parser.add_argument('--lradj', type=str, default='type1', help='*determine the scheme of adjusting learning rate')
     parser.add_argument('--inverse', action='store_true', help='inverse output data', default=False)
-
     parser.add_argument('--exp_name', type=str, default='Experiment', help='*determine the name of this experiment')
     parser.add_argument('--study_exp', type=str, default='weather_96_96', help='*differ different study file')
     parser.add_argument('--optuna', default=False, help='*determine whether to use optuna or existing checkpoint')
@@ -47,8 +43,6 @@ def parse_args():
     parser.add_argument('--criterion', default=['MAE','MSE'],
                         help='*select the loss function, but the last function is what you want to backward')
     parser.add_argument('--trials', type=int, default=20, help='*determine the number of trials')
-
-
     parser.add_argument('--use_norm', type=int, default=True)
     parser.add_argument('--d_model', type=int, default=128)
     parser.add_argument('--d_state', type=int, default=32)
