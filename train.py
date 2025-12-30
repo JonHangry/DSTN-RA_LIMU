@@ -10,7 +10,6 @@ warnings.filterwarnings("ignore")
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 def parse_args():
-    fix_seed = 2025
 
     parser = argparse.ArgumentParser(description="Time Series Platform Args")
 
